@@ -10,6 +10,7 @@ from galpones.api.router import router_galpones
 from sensores.api.router import router_sensores
 
 
+
 schema_view = get_schema_view(
     openapi.Info(
         title="Avisens API",
@@ -61,4 +62,6 @@ urlpatterns = [
 
     # API de sensores y lecturas
     path('api/', include(router_sensores.urls)),
+
+
 ]

@@ -43,6 +43,23 @@ INSTALLED_APPS = [
     'galpones',
     'sensores',
 ]
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
+
+# Botón "Authorize" de Swagger para enviar el token JWT
+SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS': {
+        'Bearer': {
+            'type': 'apiKey',
+            'name': 'Authorization',
+            'in': 'header',
+        }
+    },
+    'USE_SESSION_AUTH': False,
+}
 
 AUTH_USER_MODEL = 'users.User'
 
